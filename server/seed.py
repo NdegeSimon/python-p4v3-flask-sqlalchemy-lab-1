@@ -15,6 +15,8 @@ with app.app_context():
     db.session.add(Earthquake(magnitude=8.6, location="Alaska", year=1946))
     db.session.add(Earthquake(magnitude=8.5, location="Banda Sea", year=1934))
     db.session.add(Earthquake(magnitude=8.4, location="Chile", year=1922))
-
+    
+    Earthquake.query.filter_by(id=5).first()
+    Earthquake.query.filter(Earthquake.id==5).first()
     # Commit the transaction
     db.session.commit()
